@@ -1,0 +1,28 @@
+server:
+  port: 8001
+mybatis:
+  typeAliasesPackage: com.learn.springcloud.pojo
+  mapperLocations: classpath:mybatis/mapper/*.xml
+  configLocation: classpath:mybatis/mybatis-config.xml
+spring:
+  application:
+    name: spring-provider-dept
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/jdbcstudy?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 123456
+
+# Eureka 配置
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:7001/eureka/
+    instance:
+      instance-id: spring-provider-dept8001
+
+#info配置
+info:
+  app.name: zhangboyu
+  company.name: zhang
